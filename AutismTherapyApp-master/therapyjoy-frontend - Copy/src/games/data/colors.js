@@ -1,0 +1,116 @@
+export const colorItems = [
+  {
+    id: 'red',
+    name: 'Red',
+    hex: '#F26A6A',
+    objects: [
+      { name: 'Apple', emoji: '🍎' },
+      { name: 'Fire Truck', emoji: '🚒' },
+      { name: 'Heart', emoji: '❤️' },
+      { name: 'Tomato', emoji: '🍅' },
+    ],
+    hint: 'This fruit grows on trees and is the same color as a stop sign.',
+  },
+  {
+    id: 'blue',
+    name: 'Blue',
+    hex: '#61A9F7',
+    objects: [
+      { name: 'Ocean', emoji: '🌊' },
+      { name: 'Sky', emoji: '☁️' },
+      { name: 'Blueberry', emoji: '🫐' },
+      { name: 'Whale', emoji: '🐋' },
+    ],
+    hint: 'Look up. This color often appears in the sky and ocean.',
+  },
+  {
+    id: 'green',
+    name: 'Green',
+    hex: '#70C887',
+    objects: [
+      { name: 'Grass', emoji: '🌿' },
+      { name: 'Leaf', emoji: '🍃' },
+      { name: 'Frog', emoji: '🐸' },
+      { name: 'Turtle', emoji: '🐢' },
+    ],
+    hint: 'Think of plants and grass outside.',
+  },
+  {
+    id: 'yellow',
+    name: 'Yellow',
+    hex: '#F5D66F',
+    objects: [
+      { name: 'Sun', emoji: '🌞' },
+      { name: 'Banana', emoji: '🍌' },
+      { name: 'Lemon', emoji: '🍋' },
+      { name: 'Star', emoji: '⭐' },
+    ],
+    hint: 'It is bright, like sunshine and bananas.',
+  },
+  {
+    id: 'purple',
+    name: 'Purple',
+    hex: '#A97AE8',
+    objects: [
+      { name: 'Grapes', emoji: '🍇' },
+      { name: 'Eggplant', emoji: '🍆' },
+      { name: 'Umbrella', emoji: '☂️' },
+    ],
+    hint: 'Purple is the mix of red and blue.',
+  },
+  {
+    id: 'orange',
+    name: 'Orange',
+    hex: '#F3A15D',
+    objects: [
+      { name: 'Orange', emoji: '🍊' },
+      { name: 'Basketball', emoji: '🏀' },
+      { name: 'Carrot', emoji: '🥕' },
+    ],
+    hint: 'This fruit has the same name as the color.',
+  },
+  {
+    id: 'pink',
+    name: 'Pink',
+    hex: '#EFA0C8',
+    objects: [
+      { name: 'Flamingo', emoji: '🦩' },
+      { name: 'Bow', emoji: '🎀' },
+      { name: 'Pig', emoji: '🐷' },
+    ],
+    hint: 'Think of a soft color, like cotton candy.',
+  },
+  {
+    id: 'white',
+    name: 'White',
+    hex: '#F6F7FB',
+    objects: [
+      { name: 'Cloud', emoji: '☁️' },
+      { name: 'Snowman', emoji: '⛄' },
+      { name: 'Milk', emoji: '🥛' },
+    ],
+    hint: 'This is the color of snow and clouds.',
+  },
+  {
+    id: 'brown',
+    name: 'Brown',
+    hex: '#A57653',
+    objects: [
+      { name: 'Bear', emoji: '🐻' },
+      { name: 'Chocolate', emoji: '🍫' },
+      { name: 'Tree Trunk', emoji: '🪵' },
+    ],
+    hint: 'Think of chocolate and tree trunks.',
+  },
+  {
+    id: 'black',
+    name: 'Black',
+    hex: '#3C3F49',
+    objects: [
+      { name: 'Bat', emoji: '🦇' },
+      { name: 'Black Cat', emoji: '🐈‍⬛' },
+      { name: 'Tire', emoji: '🛞' },
+    ],
+    hint: 'This is a dark color, like the night sky.',
+  },
+];

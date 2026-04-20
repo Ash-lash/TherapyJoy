@@ -1,0 +1,50 @@
+name: Build APK
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install EAS CLI
+        run: npm install -g eas-cli
+
+      - name: Install dependencies
+        run: cd mobile && npm install --legacy-peer-deps
+
+      - name: Login to Expo
+        run: cd mobile && eas login --non-interactive --username ${{ secrets.EXPO_USERNAME }} --password ${{ secrets.EXPO_PASSWORD }}
+
+      - name: Build APK
+        run: cd mobile && eas build --platform android --non-interactive --wait
+
+      - name: Download APK
+        run: |
+          cd mobile
+          mkdir -p dist
+          # Get latest build artifacts (EAS outputs to dist by default)
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: therapyjoy-apk
+          path: mobile/dist/**/*.apk
+          retention-days: 30
+
+      - name: Create Release
+        if: success()
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: build-${{ github.run_number }}
+          release_name: TherapyJoy APK Build ${{ github.run_number }}
+          body: "APK ready for download"
