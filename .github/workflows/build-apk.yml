@@ -9,8 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 18
 
@@ -33,7 +33,7 @@ jobs:
           # Get latest build artifacts (EAS outputs to dist by default)
 
       - name: Upload APK
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: therapyjoy-apk
           path: mobile/dist/**/*.apk
@@ -41,10 +41,9 @@ jobs:
 
       - name: Create Release
         if: success()
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: build-${{ github.run_number }}
-          release_name: TherapyJoy APK Build ${{ github.run_number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: build-${{ github.run_number }}
+          name: TherapyJoy APK Build ${{ github.run_number }}
           body: "APK ready for download"
