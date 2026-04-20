@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "TherapyJoy",
+    "slug": "therapyjoy",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "therapyjoy",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F3E8FF"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dakhsolutions.therapyjoy"
+    },
+    "android": {
+      "package": "com.dakhsolutions.therapyjoy",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#8B5CF6"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": false
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c9a6da4d-d312-434c-ba7c-dbb4fe48c00a"
+      }
+    },
+    "owner": "ashlash07"
+  }
+}
