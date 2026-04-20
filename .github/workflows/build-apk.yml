@@ -14,6 +14,9 @@ jobs:
         with:
           node-version: 18
 
+      - name: Clean up embedded git repos
+        run: find . -name ".git" -type d -exec rm -rf {} + 2>/dev/null || true
+
       - name: Configure Git
         run: |
           git config --global user.email "build@therapyjoy.com"
@@ -23,13 +26,13 @@ jobs:
         run: npm install -g eas-cli
 
       - name: Install dependencies
-        run: cd mobile && npm install --legacy-peer-deps
+        run: cd mobile && npm install --legacy-peer-deps 2>&1
 
       - name: Login to Expo
-        run: cd mobile && eas login --non-interactive --username ${{ secrets.EXPO_USERNAME }} --password ${{ secrets.EXPO_PASSWORD }}
+        run: cd mobile && eas login --non-interactive --username ${{ secrets.EXPO_USERNAME }} --password ${{ secrets.EXPO_PASSWORD }} 2>&1
 
       - name: Build APK
-        run: cd mobile && eas build --platform android --non-interactive --wait
+        run: cd mobile && eas build --platform android --non-interactive --wait 2>&1
 
       - name: Download APK
         run: |
