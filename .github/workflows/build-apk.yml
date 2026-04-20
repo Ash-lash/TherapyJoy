@@ -14,6 +14,11 @@ jobs:
         with:
           node-version: 18
 
+      - name: Configure Git
+        run: |
+          git config --global user.email "build@therapyjoy.com"
+          git config --global user.name "TherapyJoy Build"
+
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
