@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm install *)",
       "Bash(npx expo *)",
-      "Bash(node scripts/generate-icons.js)"
+      "Bash(node scripts/generate-icons.js)",
+      "mcp__Claude_in_Chrome__computer"
     ]
   }
 }
